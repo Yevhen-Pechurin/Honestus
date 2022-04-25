@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//td[@name='td_name']" position="replace">
+            <td t-if="line.product_id.honestus_code" name="td_name"><span t-esc="line.name.replace(line.product_id.default_code, line.product_id.honestus_code)"/></td>
+            <td t-else="" name="td_name"><span t-field="line.name"/></td>
+        </xpath>
+        <xpath expr="//td[@name='td_priceunit']" position="replace">
+            <td name="td_priceunit" class="text-right">
+                <span t-if="line.product_id.honestus_price" t-field="line.product_id.honestus_price"/>
+                <span t-else="" t-field="line.price_unit"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
