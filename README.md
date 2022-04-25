@@ -7,7 +7,7 @@ Xml could look like this, but with much more <book> tags: https://docs.microsoft
 
 #### • Provide estimation for development
 
-## Solutions:
+## Solution:
 
 1. After getting data by first cron we need to split data by items(book) and save raw data in object with fields: raw_data, state(new,done,error)
-2. Second cron mast get variables like limit and time(by default 50 and 4*60) and process raw_data. It cron most to execute not more than 4 minutes and in every object with raw data need to change state on 'done' after a good processing or 'error' if something was wrong
+2. Second cron must get variables 'limit' and 'time'(by default 50 and 4*60) and process raw_data. It cron time executing shouldn't be more than 4 minutes and in every object with raw data need to change state on 'done' after a good processing or 'error' if something was wrong
